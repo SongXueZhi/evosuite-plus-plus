@@ -6,11 +6,9 @@ os:
    - Linux 
 jdk:
    - openjdk8
-before_install: echo "start \n" > ~/.log
 install:
    - mvn -q clean install -DskipTests=true -Dmaven.javadoc.skip=true 
 script:
-    - cat ~/.log
 #    # object construction
     - mvn -q -Dtest=ComputationGraphConstructionTest test -pl shell  > ~/.log
 #    # test legitimization
@@ -24,9 +22,6 @@ script:
    #- mvn -Dtest=StringArrayExampleTest test -pl EvosuiteTest -e
    # object construction
    #- mvn -Dtest=CascadingCallExampleTest test -pl EvosuiteTest -e
-env:
-   global:
-      - MAVEN_OPTS: "-Xmx2048m -Xms1024m -Dorg.slf4j.simpleLogger.defaultLogLevel=error"
 cache:
   directories:
     - $HOME/.m2 
