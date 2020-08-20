@@ -3,7 +3,7 @@ sudo: true
 # dist: trusty
 
 os:
-   - linux
+   - ubuntu
   
 jdk:
    - openjdk8
