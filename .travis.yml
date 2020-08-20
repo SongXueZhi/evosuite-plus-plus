@@ -13,9 +13,9 @@ install:
 
 script:
    # object construction
-   - mvn -q -Dtest=ComputationGraphConstructionTest test -pl shell 
+   - mvn -q -Dtest=ComputationGraphConstructionTest test -pl shell <log.txt
    # test legitimization
-   - mvn -q -Dtest=TestLegitimizationTest test -pl shell 
+   - mvn -q -Dtest=TestLegitimizationTest test -pl shell <log.txt
    #- mvn -Dtest=LayeredCallExampleTest test -pl EvosuiteTest -e
    #- mvn -Dtest=MultipleConstructorsExampleTest test -pl EvosuiteTest -e
    #- mvn -Dtest=MultipleExceptionsExampleTest test -pl EvosuiteTest -e
