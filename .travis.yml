@@ -7,14 +7,11 @@ os:
   
 jdk:
    - openjdk8
-before_install:
-   - apt install touch 
+before_install: sudo echo "MAVEN_OPTS='-Xmx2048m -Xms1024m -Dorg.slf4j.simpleLogger.defaultLogLevel=error'" > ~/.mavenrc
 install:
-   - touch log.txt
 #    - mvn -q clean install -DskipTests=true -Dmaven.javadoc.skip=true 
 
 script:
-   - touch log.txt
 #    # object construction
 #    - mvn -q -Dtest=ComputationGraphConstructionTest test -pl shell 
 #    # test legitimization
@@ -28,3 +25,10 @@ script:
    #- mvn -Dtest=StringArrayExampleTest test -pl EvosuiteTest -e
    # object construction
    #- mvn -Dtest=CascadingCallExampleTest test -pl EvosuiteTest -e
+env:
+   global:
+      - MAVEN_OPTS: "-Xmx2048m -Xms1024m -Dorg.slf4j.simpleLogger.defaultLogLevel=error"
+sudo: required
+cache:
+  directories:
+    - $HOME/.m2 
