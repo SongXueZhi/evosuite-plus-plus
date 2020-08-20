@@ -6,14 +6,15 @@ os:
    - Linux 
 jdk:
    - openjdk8
-before_install: sudo echo "MAVEN_OPTS='-Xmx2048m -Xms1024m -Dorg.slf4j.simpleLogger.defaultLogLevel=error'" > ~/.mavenrc
+before_install: echo "start \n" > ~/.log
 install:
    - mvn -q clean install -DskipTests=true -Dmaven.javadoc.skip=true 
 script:
+    - cat ~/.log
 #    # object construction
-    - mvn -q -Dtest=ComputationGraphConstructionTest test -pl shell 
+    - mvn -q -Dtest=ComputationGraphConstructionTest test -pl shell  > ~/.log
 #    # test legitimization
-    - mvn -q -Dtest=TestLegitimizationTest test -pl shell 
+    - mvn -q -Dtest=TestLegitimizationTest test -pl shell  > ~/.log
    #- mvn -Dtest=LayeredCallExampleTest test -pl EvosuiteTest -e
    #- mvn -Dtest=MultipleConstructorsExampleTest test -pl EvosuiteTest -e
    #- mvn -Dtest=MultipleExceptionsExampleTest test -pl EvosuiteTest -e
@@ -26,7 +27,6 @@ script:
 env:
    global:
       - MAVEN_OPTS: "-Xmx2048m -Xms1024m -Dorg.slf4j.simpleLogger.defaultLogLevel=error"
-sudo: required
 cache:
   directories:
     - $HOME/.m2 
