@@ -9,13 +9,13 @@ jdk:
    - openjdk8
 
 install:
-   - mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B
+   - mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true 
 
 script:
    # object construction
-   - mvn -Dtest=ComputationGraphConstructionTest test -pl shell -e
+   - mvn -q -Dtest=ComputationGraphConstructionTest test -pl shell 
    # test legitimization
-   - mvn -Dtest=TestLegitimizationTest test -pl shell -e
+   - mvn -q -Dtest=TestLegitimizationTest test -pl shell 
    #- mvn -Dtest=LayeredCallExampleTest test -pl EvosuiteTest -e
    #- mvn -Dtest=MultipleConstructorsExampleTest test -pl EvosuiteTest -e
    #- mvn -Dtest=MultipleExceptionsExampleTest test -pl EvosuiteTest -e
