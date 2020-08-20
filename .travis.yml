@@ -9,14 +9,15 @@ jdk:
    - openjdk8
 
 install:
-   - mvn -q clean install -DskipTests=true -Dmaven.javadoc.skip=true 
+   - > daygeek.txt
+#    - mvn -q clean install -DskipTests=true -Dmaven.javadoc.skip=true 
 
 script:
    - touch log.txt
-   # object construction
-   - mvn -q -Dtest=ComputationGraphConstructionTest test -pl shell <log.txt
-   # test legitimization
-   - mvn -q -Dtest=TestLegitimizationTest test -pl shell <log.txt
+#    # object construction
+#    - mvn -q -Dtest=ComputationGraphConstructionTest test -pl shell 
+#    # test legitimization
+#    - mvn -q -Dtest=TestLegitimizationTest test -pl shell 
    #- mvn -Dtest=LayeredCallExampleTest test -pl EvosuiteTest -e
    #- mvn -Dtest=MultipleConstructorsExampleTest test -pl EvosuiteTest -e
    #- mvn -Dtest=MultipleExceptionsExampleTest test -pl EvosuiteTest -e
