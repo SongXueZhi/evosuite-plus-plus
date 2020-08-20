@@ -12,6 +12,7 @@ install:
    - mvn -q clean install -DskipTests=true -Dmaven.javadoc.skip=true 
 
 script:
+   - touch log.txt
    # object construction
    - mvn -q -Dtest=ComputationGraphConstructionTest test -pl shell <log.txt
    # test legitimization
