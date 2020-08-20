@@ -3,19 +3,17 @@ sudo: true
 # dist: trusty
 
 os:
-   - Linux
-  
+   - Linux 
 jdk:
    - openjdk8
 before_install: sudo echo "MAVEN_OPTS='-Xmx2048m -Xms1024m -Dorg.slf4j.simpleLogger.defaultLogLevel=error'" > ~/.mavenrc
 install:
-#    - mvn -q clean install -DskipTests=true -Dmaven.javadoc.skip=true 
-
+   - mvn -q clean install -DskipTests=true -Dmaven.javadoc.skip=true 
 script:
 #    # object construction
-#    - mvn -q -Dtest=ComputationGraphConstructionTest test -pl shell 
+    - mvn -q -Dtest=ComputationGraphConstructionTest test -pl shell 
 #    # test legitimization
-#    - mvn -q -Dtest=TestLegitimizationTest test -pl shell 
+    - mvn -q -Dtest=TestLegitimizationTest test -pl shell 
    #- mvn -Dtest=LayeredCallExampleTest test -pl EvosuiteTest -e
    #- mvn -Dtest=MultipleConstructorsExampleTest test -pl EvosuiteTest -e
    #- mvn -Dtest=MultipleExceptionsExampleTest test -pl EvosuiteTest -e
