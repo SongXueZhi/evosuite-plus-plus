@@ -7,9 +7,10 @@ os:
   
 jdk:
    - openjdk8
-
+before_install:
+   - apt install touch 
 install:
-   - > daygeek.txt
+   - touch log.txt
 #    - mvn -q clean install -DskipTests=true -Dmaven.javadoc.skip=true 
 
 script:
