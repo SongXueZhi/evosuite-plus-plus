@@ -9,7 +9,7 @@ jdk:
    - openjdk8
 
 install:
-   - mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true 
+   - mvn -q clean install -DskipTests=true -Dmaven.javadoc.skip=true 
 
 script:
    # object construction
